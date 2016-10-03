@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Austin Golding's Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Part 1</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays</h1>
+    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
+        <input style="width: 100%;" id="loop" type="text">
+        <button style="width: 50%;" id="sub" onclick="loop();">Submit</button><br>
+        <textarea style="width: 100%;" id="output"></textarea>
+    </div>
+
+    <div style="width: 100px; margin: 0 auto; text-align: left;">
+        <input type="radio" name="select" id="forwards" checked>Forwards<br>
+        <input type="radio" name="select" id="backwards">Backwards<br>
+        <input type="radio" name="select" id="evens">Evens<br>
+        <input type="radio" name="select" id="odds">Odds<br>
+    </div>
+    <script>
+        function loop() {
+            var output = document.getElementById("output");
+            var input = document.getElementById("loop").value;
+            output.innerHTML = "";
+            var loop = [];
+            loop = input.split(" ");
+            if (document.getElementById("forwards").checked == true) {
+                for (var i = 0; i < loop.length; i++) {
+                    output.innerHTML += loop[i] + " ";
+                }
+            }
+            if (document.getElementById("backwards").checked == true) {
+                for (var i = loop.length; i > 0; i--) {
+                    output.innerHTML += loop[i - 1] + " ";
+                }
+            }
+            if (document.getElementById("evens").checked == true) {
+                for (var i = 0; i < loop.length; i++) {
+                    if (i % 2 == 1) {
+                        output.innerHTML += loop[i] + " ";
+                    }
+                }
+            }
+            if (document.getElementById("odds").checked == true) {
+                for (var i = 0; i < loop.length; i++) {
+                    if (i % 2 == 0) {
+                        output.innerHTML += loop[i] + " ";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

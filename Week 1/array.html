@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Austin Golding's Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Part 2</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>Associative Arrays, Object Creation Functions, Inheritance, Properties, Methods, Instantiation
+    </h1>
+    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
+        <input style="width: 100%;" id="nameS" placeholder="Search Name" type="text">
+        <button style="width: 50%;" id="search" onclick="searchUser();">Search</button><br>
+        <p style="width: 100%;" id="error"></p>
+        <input style="width: 100%;" id="nameI" placeholder="Name" type="text">
+        <input style="width: 100%;" id="ageI" placeholder="Age" type="text">
+        <input style="width: 100%;" id="petI" placeholder="Favorite Pet" type="text">
+        <button style="width: 50%;" id="sub" onclick="createUser();">Create</button><br>
+        <p style="width: 100%;" id="name">Name:</p>
+        <p style="width: 100%;" id="age">Age: </p>
+        <p style="width: 100%;" id="pet">Pet: </p>
+    </div>
+
+    <div style="width: 100px; margin: 0 auto; text-align: left;">
+        <!--<input type="radio" name="select" id="forwards" checked>Forwards<br>
+        <input type="radio" name="select" id="backwards">Backwards<br>
+        <input type="radio" name="select" id="evens">Evens<br>
+        <input type="radio" name="select" id="odds">Odds<br>-->
+    </div>
+    <script>
+        var users = [];
+
+        function User() {
+            this.age = 0;
+            this.name = " ";
+            this.pet = " ";
+        }
+
+        User.prototype.set = function(age, name, pet) {
+            this.age = age;
+            this.name = name;
+            this.pet = pet;
+        }
+
+        function newUser() {
+            User.call(this);
+        }
+
+        function protoNewUser() {
+            newUser.prototype = Object.create(User.prototype);
+            newUser.prototype.constructor = newUser;
+        }
+
+        function searchUser() {
+            var name = document.getElementById("nameS").value;
+            document.getElementById("error").innerHTML = " ";
+            if (users[name] != null) {
+                display(name);
+            } else {
+                document.getElementById("error").innerHTML = "Sorry User Does Not Exist";
+            }
+        }
+
+        function createUser() {
+            var name = document.getElementById("nameI").value;
+            var age = document.getElementById("ageI").value;
+            var pet = document.getElementById("petI").value;
+            document.getElementById("error").innerHTML = " ";
+            protoNewUser();
+            var user = new newUser();
+            user.set(age, name, pet);
+            users[name] = user;
+            display(name);
+        }
+
+        function display(name) {
+            var userName = document.getElementById("name");
+            var userAge = document.getElementById("age");
+            var userPet = document.getElementById("pet");
+            clear();
+
+            userName.innerHTML += users[name].name;
+            userAge.innerHTML += users[name].age;
+            userPet.innerHTML += users[name].pet;
+        }
+
+        function clear() {
+            document.getElementById("name").innerHTML = "Name: ";
+            document.getElementById("age").innerHTML = "Age: "
+            document.getElementById("pet").innerHTML = "Pet: "
+        }
+    </script>
+</body>
+
+</html>
