@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Austin Golding's Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON and XMLHTTPRequest</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>JSON</h1>
+    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
+        <button style="width: 50%;" id="sub" onclick="readJSON();">Submit</button><br>
+        <textarea style="width: 100%;" id="output"></textarea>
+    </div>
+    <script>
+        function readJSON() {
+            var obj = new XMLHTTPRequest();
+            var url = "messages.json";
+
+            obj.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var messages = JSON.parse(this.responseText);
+                    loop(messages);
+                }
+            }
+            obj.open("GET", url, true);
+            obj.send();
+        }
+
+        function loop(messages) {
+            var stringif = JSON.stringify(messages);
+            var mess = JSON.parse(stringif);
+            console.log(mess.length);
+            for (var i = 0; i < Object.keys(mess.messages).length; i++) {
+                output.innerHTML += mess.messages[i].username + ": " + mess.messages[i].message + "&#13;&#10;";
+            }
+        }
+    </script>
+</body>
+
+</html>
