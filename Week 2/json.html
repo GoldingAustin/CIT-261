@@ -33,7 +33,6 @@
         function loop(messages) {
             var stringif = JSON.stringify(messages);
             var mess = JSON.parse(stringif);
-            alert(Object.keys(mess).length);
             for (i in mess) {
                 output.innerHTML += mess[i].username + ": " + mess[i].message + "&#13;&#10;";
             }
