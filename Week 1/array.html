@@ -12,6 +12,7 @@
 <body>
     <h1>Associative Arrays, Object Creation Functions, Inheritance, Properties, Methods, Instantiation
     </h1>
+    <h2>Input users info then use the search function to see if the user exists or not</h2>
     <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
         <input style="width: 100%;" id="nameS" placeholder="Search Name" type="text">
         <button style="width: 50%;" id="search" onclick="searchUser();">Search</button><br>
@@ -26,10 +27,6 @@
     </div>
 
     <div style="width: 100px; margin: 0 auto; text-align: left;">
-        <!--<input type="radio" name="select" id="forwards" checked>Forwards<br>
-        <input type="radio" name="select" id="backwards">Backwards<br>
-        <input type="radio" name="select" id="evens">Evens<br>
-        <input type="radio" name="select" id="odds">Odds<br>-->
     </div>
     <script>
         var users = [];
@@ -60,6 +57,7 @@
             document.getElementById("error").innerHTML = " ";
             if (users[name] != null) {
                 display(name);
+                document.getElementById("error").innerHTML = "User Found!";
             } else {
                 document.getElementById("error").innerHTML = "Sorry User Does Not Exist";
             }
