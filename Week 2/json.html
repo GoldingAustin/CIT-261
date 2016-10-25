@@ -22,7 +22,7 @@
 
             obj.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    var messages = this.responseText;
+                    var messages = JSON.parse(this.responseText);
                     loop(messages);
                 }
             }
@@ -33,9 +33,9 @@
         function loop(messages) {
             var stringif = JSON.stringify(messages);
             var mess = JSON.parse(stringif);
-            console.log(Object.keys(stringif).length);
-            for (var i = 0; i < Object.keys(mess).length; i++) {
-                output.innerHTML += mess[i].username + ": " + mess[i].message + "&#13;&#10;";
+            alert(Object.keys(messages).length);
+            for (i in messages) {
+                output.innerHTML += mess.username + ": " + mess.message + "&#13;&#10;";
             }
         }
     </script>
