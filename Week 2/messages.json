@@ -1,19 +1,20 @@
 {
-
-    "1": {
-        "username": "Tom",
-        "message": "Hey"
-    },
-    "2": {
-        "username": "Rick",
-        "message": "Hi, how are you?"
-    },
-    "3": {
-        "username": "Tom",
-        "message": "Good,how about you?"
-    },
-    "4": {
-        "username": "Rick",
-        "message": "I've been great, thanks"
+    "messages": {
+        "1": {
+            "username": "Tom",
+            "message": "Hey"
+        },
+        "2": {
+            "username": "Rick",
+            "message": "Hi, how are you?"
+        },
+        "3": {
+            "username": "Tom",
+            "message": "Good,how about you?"
+        },
+        "4": {
+            "username": "Rick",
+            "message": "I've been great, thanks"
+        }
     }
 }
