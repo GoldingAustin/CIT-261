@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Austin Golding's Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Part 1</title>
+    <link rel="stylesheet" href="../Style/main.css">
+</head>
+
+<body>
+    <h1>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays</h1>
+    <h2>Input a series of numbers or words, use the radio buttons and the submit button to change the order of the list</h2>
+    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
+        <select size="1">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+  <option value="yellow">Yellow</option>
+    </select>
+        <input style="width: 100%;" id="title" placeholder="Page Title" type="text">
+        <!--<input style="width: 100%;" id="input" value="" type="text"> -->
+        <button style="width: 50%;" id="sub" onclick="local()">Submit</button><br>
+        <textarea style="width: 100%;" id="output"></textarea>
+    </div>
+    <script>
+        function local() {
+            var output = document.querySelector("select").value;
+            var input = document.getElementById("title").value;
+            var title = document.createElement("h1");
+            title.innerHTML = input
+            document.body.style.backgroundColor = output;
+            document.body.replaceChild(document.querySelector("h1"), title)
+
+            output.innerHTML = localStorage.getItem("input");
+        }
+    </script>
+</body>
+
+</html>
