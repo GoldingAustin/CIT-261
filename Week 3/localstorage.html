@@ -5,25 +5,58 @@
     <meta charset="utf-8">
     <meta name="description" content="Austin Golding's Test">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 1 Part 1</title>
+    <title>Week 3 Part 1</title>
     <link rel="stylesheet" href="https://goldingaustin.github.io/CIT-261/Style/main.css">
 </head>
 
 <body>
-    <h1>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays</h1>
-    <h2>Input a series of numbers or words, use the radio buttons and the submit button to change the order of the list</h2>
+    <h1>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h1>
+    <h2>Input a series of numbers or words, hit the submit button to see each the data stored and retrieved from localStorage</h2>
     <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
         <input style="width: 100%;" id="input" value="1 2 3 4 5 6 7 8 9" type="text">
         <button style="width: 50%;" id="sub" onclick="local()">Submit</button><br>
-        <textarea style="width: 100%;" id="output"></textarea>
+        <textarea style="width: 100%;" id="outputSimple"></textarea>
+        <textarea style="width: 100%;" id="outputArray"></textarea>
+        <textarea style="width: 100%;" id="outputAsArray"></textarea>
+        <textarea style="width: 100%;" id="outputObject"></textarea>
     </div>
     <script>
-        function local() 
-        {
-            var output = document.getElementById("output");
+        function local() {
+            var outputSimple = document.getElementById("outputSimple");
+            var outputArray = document.getElementById("outputArray");
+            var outputAsArray = document.getElementById("outputAsArray");
+            var outputObject = document.getElementById("outputObject");
             var input = document.getElementById("input").value;
-            localStorage.setItem("input", input);
-            output.innerHTML = localStorage.getItem("input");
+            localStorage.setItem("inputSimple", input);
+            var arr = [];
+            arr = input.split(" ");
+            localStorage.setItem("inputArray", arr);
+            var asArr = {};
+            for (var i = 0; i < arr.length; i++) {
+                asArr[i + 1] = arr[i];
+            }
+            asArr = JSON.stringify(asArr);
+            localStorage.setItem("inputAsArray", asArr);
+
+            var asObj = new Object();
+            for (var i = 0; i < arr.length; i++) {
+                asObj[i] = arr[i];
+            }
+
+            localStorage.setItem("inputObject", asObj);
+
+            outputSimple.innerHTML = localStorage.getItem("inputSimple");
+            outputArray.innerHTML = localStorage.getItem("inputArray");
+            var temp = localStorage.getItem("inputAsArray");
+            for (i in temp) {
+                outputAsArray.innerHTML += temp[i] + " ";
+            }
+            var tempO = localStorage.getItem("inputObject");
+            for (var i in tempO) {
+                var x = 0;
+                outputObject.innerHTML += tempO[x].i + " ";
+                x++;
+            }
         }
     </script>
 </body>
