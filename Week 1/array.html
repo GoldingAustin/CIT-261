@@ -55,7 +55,7 @@
         function searchUser() {
             var name = document.getElementById("nameS").value;
             document.getElementById("error").innerHTML = " ";
-            if (users[name] != null) {
+            if (name in users) {
                 display(name);
                 document.getElementById("error").innerHTML = "User Found!";
             } else {
