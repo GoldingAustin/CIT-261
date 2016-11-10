@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Austin Golding's Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Events and CSS</title>
+    <link rel="stylesheet" href="../Style/main.css">
+</head>
+<style>
+    @keyframes rainbow {
+        10% {
+            background-color: #8FE7BB;
+        }
+        20% {
+            background-color: #8FE7CF;
+        }
+        30% {
+            background-color: #8FA7E7;
+        }
+        40% {
+            background-color: #BE8FE7;
+        }
+        50% {
+            background-color: #E78FCC;
+        }
+        60% {
+            background-color: #E78F8F;
+        }
+        70% {
+            background-color: #E96161;
+        }
+        80% {
+            background-color: #E8BD6D;
+        }
+        90% {
+            background-color: #A8E78F;
+        }
+        100% {
+            background-color: #7EE86D;
+        }
+    }
+    
+    @keyframes trans {
+        from {
+            font-size: 12px;
+        }
+        to {
+            font-size: 120px;
+        }
+    }
+    
+    @keyframes spin {
+        from {
+            transform: rotate(0deg) translateX(270px);
+        }
+        to {
+            transform: rotate(360deg) translateX(270px);
+        }
+    }
+    
+    #block {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        position: relative;
+        color: white;
+    }
+    
+    #touch {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        position: relative;
+        color: white;
+    }
+    
+    @keyframes touch {
+        from {
+            width: 100px;
+            background-color: black;
+            left: 0px;
+        }
+        to {
+            width: 50px;
+            background-color: lightcoral;
+            left: 500px;
+        }
+    }
+</style>
+
+<body>
+    <h1>Events</h1>
+    <h2>Examples of animations and transitions triggered by Javascript</h2>
+    <div style="margin-top: 50px; margin-left: 10%; margin-right: 10%;">
+        <div id="trans">Mouse Over</div>
+    </div>
+    <div style="margin-top: 100px; margin-left: 35%; margin-right: 35%;" id="block">Click Me</div>
+    <div style="margin-top: 100px; margin-left: 35%; margin-right: 35%;" id="touch">On Touch</div>
+    <script type="text/javascript" src="event.js"></script>
+</body>
+
+</html>
