@@ -8,17 +8,37 @@
     <title>Week 3 Part 1</title>
     <link rel="stylesheet" href="https://goldingaustin.github.io/CIT-261/Style/main.css">
 </head>
+<style>
+    textarea {
+        width: 100%;
+    }
+    
+    #wrapper {
+        margin-top: 50px;
+        width: 30%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    button {
+        width: 50%;
+    }
+</style>
 
 <body>
     <h1>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h1>
     <h2>Input a series of numbers or words, hit the submit button to see each the data stored and retrieved from localStorage</h2>
-    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
-        <input style="width: 100%;" id="input" value="1 2 3 4 5 6 7 8 9" type="text">
-        <button style="width: 50%;" id="sub" onclick="local()">Submit</button><br>
-        <textarea style="width: 100%;" id="outputSimple"></textarea>
-        <textarea style="width: 100%;" id="outputArray"></textarea>
-        <textarea style="width: 100%;" id="outputAsArray"></textarea>
-        <textarea style="width: 100%;" id="outputObject"></textarea>
+    <div id="wrapper">
+        <input id="input" value="1 2 3 4 5 6 7 8 9" type="text">
+        <button id="sub" onclick="local()">Submit</button><br>
+        <textarea id="outputSimple"></textarea>
+        <textarea id="outputArray"></textarea>
+        <textarea id="outputAsArray"></textarea>
+        <textarea id="outputObject"></textarea>
     </div>
     <script>
         function local() {

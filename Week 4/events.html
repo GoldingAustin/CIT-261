@@ -60,20 +60,22 @@
         }
     }
     
-    #block {
-        width: 100px;
-        height: 100px;
-        background-color: black;
-        position: relative;
-        color: white;
-    }
-    
+    #block,
     #touch {
         width: 100px;
         height: 100px;
         background-color: black;
         position: relative;
         color: white;
+        margin-top: 100px;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    
+    #wrap {
+        margin-top: 50px;
+        margin-left: 10%;
+        margin-right: 10%;
     }
     
     @keyframes touch {
@@ -93,11 +95,11 @@
 <body>
     <h1>Events</h1>
     <h2>Examples of animations and transitions triggered by Javascript</h2>
-    <div style="margin-top: 50px; margin-left: 10%; margin-right: 10%;">
+    <div id="wrap">
         <div id="trans">Mouse Over</div>
     </div>
-    <div style="margin-top: 100px; margin-left: 35%; margin-right: 35%;" id="block">Click Me</div>
-    <div style="margin-top: 100px; margin-left: 35%; margin-right: 35%;" id="touch">On Touch</div>
+    <div id="block">Click Me</div>
+    <div id="touch">On Touch</div>
     <script type="text/javascript" src="event.js"></script>
 </body>
 

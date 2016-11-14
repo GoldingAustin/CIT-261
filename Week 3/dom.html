@@ -8,19 +8,35 @@
     <title>Week 3 Part 2</title>
     <link rel="stylesheet" href="../Style/main.css">
 </head>
+<style>
+    #wrapper {
+        margin-top: 50px;
+        width: 30%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    button {
+        width: 50%;
+    }
+</style>
 
 <body>
     <h1>DOM Manipulation and CSS Manipulation using Javascript</h1>
     <h2>Choose a color and input a page title then click submit to see your changes</h2>
-    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
+    <div id="wrapper">
         <select size="1">
   <option value="red">Red</option>
   <option value="green">Green</option>
   <option value="blue">Blue</option>
   <option value="yellow">Yellow</option>
     </select>
-        <input style="width: 100%;" id="title" placeholder="Page Title" type="text">
-        <button style="width: 50%;" id="sub" onclick="dom()">Submit</button><br>
+        <input id="title" placeholder="Page Title" type="text">
+        <button id="sub" onclick="dom()">Submit</button><br>
     </div>
     <script>
         function dom() {

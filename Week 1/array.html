@@ -8,22 +8,42 @@
     <title>Week 1 Part 2</title>
     <link rel="stylesheet" href="https://goldingaustin.github.io/CIT-261/Style/main.css">
 </head>
+<style>
+    #wrapper {
+        margin-top: 50px;
+        width: 30%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    button {
+        width: 50%;
+    }
+    
+    p {
+        width: 100%;
+    }
+</style>
 
 <body>
     <h1>Associative Arrays, Object Creation Functions, Inheritance, Properties, Methods, Instantiation
     </h1>
     <h2>Input users info then use the search function to see if the user exists or not</h2>
-    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
-        <input style="width: 100%;" id="nameS" placeholder="Search Name" type="text">
-        <button style="width: 50%;" id="search" onclick="searchUser();">Search</button><br>
-        <p style="width: 100%;" id="error"></p>
-        <input style="width: 100%;" id="nameI" placeholder="Name" type="text">
-        <input style="width: 100%;" id="ageI" placeholder="Age" type="text">
-        <input style="width: 100%;" id="petI" placeholder="Favorite Pet" type="text">
-        <button style="width: 50%;" id="sub" onclick="createUser();">Create</button><br>
-        <p style="width: 100%;" id="name">Name:</p>
-        <p style="width: 100%;" id="age">Age: </p>
-        <p style="width: 100%;" id="pet">Pet: </p>
+    <div id="wrapper">
+        <input id="nameS" placeholder="Search Name" type="text">
+        <button id="search" onclick="searchUser();">Search</button><br>
+        <p id="error"></p>
+        <input id="nameI" placeholder="Name" type="text">
+        <input id="ageI" placeholder="Age" type="text">
+        <input id="petI" placeholder="Favorite Pet" type="text">
+        <button id="sub" onclick="createUser();">Create</button><br>
+        <p id="name">Name:</p>
+        <p id="age">Age: </p>
+        <p id="pet">Pet: </p>
     </div>
 
     <div style="width: 100px; margin: 0 auto; text-align: left;">

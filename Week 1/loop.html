@@ -8,17 +8,43 @@
     <title>Week 1 Part 1</title>
     <link rel="stylesheet" href="https://goldingaustin.github.io/CIT-261/Style/main.css">
 </head>
+<style>
+    #wrapper {
+        margin-top: 50px;
+        width: 30%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    
+    #loop {
+        width: 100%;
+    }
+    
+    button {
+        width: 50%;
+    }
+    
+    textarea {
+        width: 100%;
+    }
+    
+    #wrapper2 {
+        width: 100px;
+        margin: 0 auto;
+        text-align: left;
+    }
+</style>
 
 <body>
     <h1>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays</h1>
     <h2>Input a series of numbers or words, use the radio buttons and the submit button to change the order of the list</h2>
-    <div style="margin-top: 50px; width: 30%; margin-left: 35%; margin-right: 35%;">
-        <input style="width: 100%;" id="loop" value="1 2 3 4 5 6 7 8 9" type="text">
-        <button style="width: 50%;" id="sub" onclick="loop();">Submit</button><br>
-        <textarea style="width: 100%;" id="output"></textarea>
+    <div id="wrapper">
+        <input id="loop" value="1 2 3 4 5 6 7 8 9" type="text">
+        <button id="sub" onclick="loop();">Submit</button><br>
+        <textarea id="output"></textarea>
     </div>
 
-    <div style="width: 100px; margin: 0 auto; text-align: left;">
+    <div id="wrapper2">
         <input type="radio" name="select" id="forwards" checked>Forwards<br>
         <input type="radio" name="select" id="backwards">Backwards<br>
         <input type="radio" name="select" id="evens">Evens<br>
