@@ -41,41 +41,49 @@
         <textarea id="outputObject"></textarea>
     </div>
     <script>
-        function local() {
+        function simple(input) {
             var outputSimple = document.getElementById("outputSimple");
-            var outputArray = document.getElementById("outputArray");
-            var outputAsArray = document.getElementById("outputAsArray");
-            var outputObject = document.getElementById("outputObject");
-            var input = document.getElementById("input").value;
             localStorage.setItem("inputSimple", input);
-            var arr = [];
-            arr = input.split(" ");
+        }
+
+        function array(arr) {
+            var outputArray = document.getElementById("outputArray");
             localStorage.setItem("inputArray", arr);
+        }
+
+        function associative(arr) {
+            var outputAsArray = document.getElementById("outputAsArray");
             var asArr = {};
             for (var i = 0; i < arr.length; i++) {
                 asArr[i + 1] = arr[i];
             }
             asArr = JSON.stringify(asArr);
             localStorage.setItem("inputAsArray", asArr);
+        }
 
-            var asObj = new Object();
-            for (var i = 0; i < arr.length; i++) {
-                asObj[i] = arr[i];
-            }
+        function local() {
+            var input = document.getElementById("input").value;
+            var arr = input.split(" ");
+            simple(input);
+            array(arr);
+            associative(arr);
+            output();
+        }
 
-            localStorage.setItem("inputObject", asObj);
+        function output() {
+            document.getElementById("outputSimple").innerHTML = localStorage.getItem("inputSimple");
 
-            outputSimple.innerHTML = localStorage.getItem("inputSimple");
-            outputArray.innerHTML = localStorage.getItem("inputArray");
+            document.getElementById("outputArray").innerHTML = localStorage.getItem("inputArray");
+
             var temp = localStorage.getItem("inputAsArray");
             for (i in temp) {
-                outputAsArray.innerHTML += temp[i] + " ";
+                document.getElementById("outputAsArray").innerHTML += temp[i] + " ";
             }
-            var tempO = localStorage.getItem("inputObject");
-            for (var i in tempO) {
-                var x = 0;
-                outputObject.innerHTML += tempO[x].i + " ";
-                x++;
+
+            var tempO = localStorage.getItem("inputAsArray");
+            tempO = JSON.parse(tempO);
+            for (y in tempO) {
+                document.getElementById("outputObject").innerHTML += y + " ";
             }
         }
     </script>
