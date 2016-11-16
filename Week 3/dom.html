@@ -38,16 +38,7 @@
         <input id="title" placeholder="Page Title" type="text">
         <button id="sub" onclick="dom()">Submit</button><br>
     </div>
-    <script>
-        function dom() {
-            var output = document.querySelector("select").value;
-            var input = document.getElementById("title").value;
-            var title = document.createElement("h1");
-            title.innerHTML = input;
-            document.body.style.backgroundColor = output;
-            document.querySelector("h1").parentNode.replaceChild(title, document.querySelector("h1"));
-        }
-    </script>
 </body>
+<script type="text/javascript" src="dom.js"></script>
 
 </html>
