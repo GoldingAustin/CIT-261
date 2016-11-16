@@ -40,6 +40,6 @@
      var tempO = localStorage.getItem("inputAsArray");
      tempO = JSON.parse(tempO);
      for (var y in tempO) {
-         document.getElementById("outputObject").innerHTML += y + " ";
+         document.getElementById("outputObject").innerHTML += tempO[y] + " ";
      }
  }
