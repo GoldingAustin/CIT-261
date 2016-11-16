@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Austin Golding's Test">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 3 Part 2</title>
+    <title>HTML5 Tags</title>
     <link rel="stylesheet" href="../Style/main.css">
 </head>
 <style>
@@ -43,19 +43,6 @@
         </div>
     </div>
 </body>
-<script>
-    var can = document.getElementById("rect");
-    var canCon = can.getContext("2d");
-    canCon.fillStyle = "#d19ac4";
-    canCon.fillRect(0, 0, 500, 300);
-
-    var pic = document.getElementById("pic");
-    var picCon = pic.getContext("2d");
-    var img = new Image();
-    img.src = 'test.jpg';
-    img.onload = function() {
-        picCon.drawImage(img, 0, 0);
-    }
-</script>
+<script type="text/javascript" src="tags.js"></script>
 
 </html>
